@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Create a Job</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .section {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        input,
+        textarea,
+        select {
+            display: block;
+            margin: 10px 0;
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        h4 {
+            margin-top: 0;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Create a Job</h2>
+    <form id="jobForm">
+        <div class="grid">
+            <div class="section">
+                <h4>Client details</h4>
+                <input name="firstName" placeholder="First name" required />
+                <input name="lastName" placeholder="Last name" required />
+                <input name="phone" placeholder="Phone" required />
+                <input name="email" placeholder="Email (optional)" />
+            </div>
+
+            <div class="section">
+                <h4>Job details</h4>
+                <select name="jobType" required>
+                    <option value="">Job type</option>
+                    <option value="Installation">Installation</option>
+                    <option value="Repair">Repair</option>
+                </select>
+                <select name="jobSource">
+                    <option value="">Job source</option>
+                    <option value="Referral">Referral</option>
+                    <option value="Online">Online</option>
+                </select>
+                <textarea name="description" placeholder="Job description (optional)"></textarea>
+            </div>
+
+            <div class="section">
+                <h4>Service location</h4>
+                <input name="address" placeholder="Address" />
+                <input name="city" placeholder="City" />
+                <input name="state" placeholder="State" />
+                <input name="zip" placeholder="Zip code" />
+                <select name="area">
+                    <option value="">Area</option>
+                    <option value="North">North</option>
+                    <option value="South">South</option>
+                </select>
+            </div>
+
+            <div class="section">
+                <h4>Scheduled</h4>
+                <input name="startDate" type="date" placeholder="Start date" />
+                <input name="startTime" type="time" placeholder="Start time" />
+                <input name="endTime" type="time" placeholder="End time" />
+                <select name="testSelect">
+                    <option value="">Test select</option>
+                    <option value="test1">Test 1</option>
+                    <option value="test2">Test 2</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="submit">Submit Job</button>
+    </form>
+
+    <script type="module" src="./script.js"></script>
+</body>
+
+</html>
